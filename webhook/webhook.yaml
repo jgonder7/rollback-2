@@ -14,3 +14,12 @@ spec:
       subscriptionID: 0c78606e-6fc5-4a25-9a2e-38067ce1b3a9
       sendFinished: false
       sendStarted: false
+    - type: sh.keptn.event.scale-up.triggered
+      requests:
+        - url: http://keptn.usdev01.us-east-1.dev.digitalecp.mcd.com
+          payload: ""
+          headers: []
+          method: GET
+      subscriptionID: 4f21b62f-f6d9-4873-86c4-aab0ec254d10
+      sendFinished: true
+      sendStarted: true
