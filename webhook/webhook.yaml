@@ -4,16 +4,6 @@ metadata:
   name: webhook-configuration
 spec:
   webhooks:
-    - type: sh.keptn.event.test.triggered
-      requests:
-        - url: http://argo-workflows.usdev01.us-east-1.dev.digitalecp.mcd.com/api/v1/workflows/locust-cluster/submit
-          payload: >-
-            {"resourceKind":"WorkflowTemplate","resourceName":"perf-testing","submitOptions":{"entrypoint":"perf-testing","parameters":["keptn-stage-name={{.data.stage}}","keptn-trigger-shkeptncontext={{.shkeptncontext}}","keptn-trigger-id={{.id}}","keptn-triggered=true","env-name={{.data.labels.envname}}","market-name={{.data.labels.marketname}}","team-name={{.data.project}}","test-name={{.data.service}}","test-api-url={{.data.labels.testapiurl}}","test-vus={{.data.labels.testvus}}","test-workers={{.data.labels.testworkers}}","test-runtime={{.data.labels.testruntime}}","test-spawnrate={{.data.labels.testspawnrate}}","test-datafiles={{.data.labels.testdatafiles}}","test-testfile={{.data.labels.testtestfile}}","test-slofile={{.data.labels.testslofile}}","test-slifile={{.data.labels.testslifile}}","test-loadshapefile={{.data.labels.testloadshapefile}}"]}}
-          headers: []
-          method: POST
-      subscriptionID: 0c78606e-6fc5-4a25-9a2e-38067ce1b3a9
-      sendFinished: false
-      sendStarted: false
     - type: sh.keptn.event.scale-up.triggered
       requests:
         - url: http://keptn.usdev01.us-east-1.dev.digitalecp.mcd.com
