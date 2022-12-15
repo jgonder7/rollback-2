@@ -1,0 +1,125 @@
+---
+spec_version: '0.1.0'
+comparison:
+  compare_with: "single_result"
+  include_result_with_score: "pass"
+  aggregate_function: avg
+objectives:
+  - sli: Paypal_GetWallet_percentile_90
+    displayName: "Paypal Get Wallet 90th Percentile"
+    pass:
+      - criteria:
+          - "<=100"
+    warning:
+      - criteria:
+          - "<=66"
+  - sli: Paypal_GetWallet_requests
+    displayName: "Paypal Get Wallet requests"
+    pass:
+      - criteria:
+          - ">20"
+  - sli: Paypal_GetWallet_failures
+    displayName: "Paypal Get Wallet failures"
+    pass:
+      - criteria:
+          - "<20"          
+  - sli: Paypal_GetWallet_rps
+    displayName: "Paypal Get Wallet throughput"
+    pass:
+      - criteria:
+          - ">2"
+  - sli: Paypal_AddCard_percentile_90
+    displayName: "Paypal Add Card 90th Percentile"
+    pass:
+      - criteria:
+          - "<=1360"
+    warning:
+      - criteria:
+          - "<=1314"
+  - sli: Paypal_AddCard_requests
+    displayName: "Paypal Add Card requests"
+    pass:
+      - criteria:
+          - ">20"
+  - sli: Paypal_AddCard_failures
+    displayName: "Paypal Add Card failures"
+    pass:
+      - criteria:
+          - "<20"          
+  - sli: Paypal_AddCard_rps
+    displayName: "Paypal Add Card throughput"
+    pass:
+      - criteria:
+          - ">2"
+  - sli: Paypal_DeleteCard_percentile_90
+    displayName: "Paypal Delete Card 90th Percentile"
+    pass:
+      - criteria:
+          - "<=1350"
+    warning:
+      - criteria:
+          - "<=1314"
+  - sli: Paypal_DeleteCard_requests
+    displayName: "Paypal Delete Card requests"
+    pass:
+      - criteria:
+          - ">20"
+  - sli: Paypal_DeleteCard_failures
+    displayName: "Paypal Delete Card failures"
+    pass:
+      - criteria:
+          - "<1500"          
+  - sli: Paypal_DeleteCard_rps
+    displayName: "Paypal Delete Card throughput"
+    pass:
+      - criteria:
+          - ">2"
+  - sli: Paypal_CheckoutV1_percentile_90
+    displayName: "Paypal Checkout V1 90th Percentile"
+    pass:
+      - criteria:
+          - "<=1350"
+    warning:
+      - criteria:
+          - "<=1314"
+  - sli: Paypal_CheckoutV1_requests
+    displayName: "Paypal Checkout V1 requests"
+    pass:
+      - criteria:
+          - ">20"
+  - sli: Paypal_CheckoutV1_failures
+    displayName: "Paypal Checkout V1 failures"
+    pass:
+      - criteria:
+          - "<100"          
+  - sli: Paypal_CheckoutV1_rps
+    displayName: "Paypal Checkout V1 throughput"
+    pass:
+      - criteria:
+          - ">2"
+  - sli: Paypal_CheckoutV2_percentile_90
+    displayName: "Paypal Checkout V2 90th Percentile"
+    pass:
+      - criteria:
+          - "<=5500"
+    warning:
+      - criteria:
+          - "<=5100"
+  - sli: Paypal_CheckoutV2_requests
+    displayName: "Paypal Checkout V2 requests"
+    pass:
+      - criteria:
+          - ">20"
+  - sli: Paypal_CheckoutV2_failures
+    displayName: "Paypal Checkout V2 failures"
+    pass:
+      - criteria:
+          - "<400"          
+  - sli: Paypal_CheckoutV2_rps
+    displayName: "Paypal Checkout V2 throughput"
+    pass:
+      - criteria:
+          - ">2"
+total_score:
+  pass: "90%"
+  warning: "75%"
